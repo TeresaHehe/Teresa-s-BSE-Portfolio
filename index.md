@@ -1,5 +1,5 @@
 # Interactive Pet Planter
-The interactive pet planter uses sensors to detect water levels in a planter. When a plant is watered, the planter will emit a notification once water levels reach a certain capacity. It also has an interactive display that changes as the water level increases.
+The interactive pet planter uses sensors to detect water levels in a planter. When a plant is watered, the planter will emit a sound alert once water levels reach a certain capacity. It also has an interactive display that changes as the water level increases.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
