@@ -86,8 +86,8 @@ Don't forget to place the link of where to buy each component inside the quotati
 
   There are multiple games available on the arcade, including tetris, snake, race cars, space invaders, and a slot machine. The four blue buttons control the direction of objects on the LED display modules, which are made of many small lights. Together, the lights flash on and off to create patterns and images. The scoreboard, a seven segment display, works in a similar fashion; it can create any combination of digits by lighting up or turning off each segment. 
 
-![seven segement display diagram](display.png)
-<font size =-3>Each segment is labelled with a letter from "a" to "g"; by turning on and off different segments, the display can show different digits.</font>
+![seven segment display diagram](display.png)
+Each segment is labelled with a letter from "a" to "g"; by turning on and off different segments, the display can show different digits.
   
   When booting up the device, the player can scroll through the different game options with the directional buttons. The green button is used to select a game or perform game-specific actions, such as rotating a shape or shooting objects. The yellow button pauses the game or exits from it. Every component of the console, aside from the case and the button caps, was soldered onto the PCB. The solder acts as an adhesive and allows the wire to conduct electricity to the rest of the board.
 
