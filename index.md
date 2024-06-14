@@ -5,6 +5,8 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 |:--:|:--:|:--:|:--:|
 | Teresa W | Palo Alto High School | Electrical Engineering | Incoming Junior
 
+![headshot](Teresa_W.jpg)
+
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 ![Headstone Image](logo.svg)--->
