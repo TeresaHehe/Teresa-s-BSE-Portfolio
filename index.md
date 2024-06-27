@@ -53,8 +53,21 @@ The planter consists of a shell, which makes up its form, and a planter in the m
 
 The two main components, the pyportal and the sensor, communicate with I2C protocol. I2C stands for inter-integrated circuit, because the pyportal and the sensor each have integrated circuits, which communicate with each other. An integrated circuit (IC) includes many small components like resistors and transitors, compressed into a small area in the form of a chip. In I2C communication, there is a master-slave dynamic where one device acts as the microcontroller with multiple peripherals. In this case, the pyportal acts as the master and the sensor acts as the slave. There are two wires involved in I2C protocol; SDA (serial data) and SCL (serial clock). Data is sent and recieved with the SDA, while the SCL carries the clock signal. The clock is essential to the data transmission process; since data is sent one bit at a time, it is imperative that the bits are sent in time.
 
+(image placeholder)
 
+As seen in this figure of the SDA and the SCL, there is a start and a stop condition required in the process. In the start condition, the SDA must go from high to low voltage before the SCL goes from high to low. For the stop condition, the SCL goes from low to high voltage before the SDA does.
 
+Each slave possesses a 7 bit address. After sending the start condition, the master will send the address of the slave it wishes to communicate with, along with a read/write bit. This bit specifies whether data is being sent (low voltage) or recieved (high voltage). The slave sends back an ACK (ackknowledge) bit if the message was successfully recieved, and a NACK (no-acknowledge) bit if it was not recieved. From then on, data frames are sent in 8 bit packages, followed by an ACK or NACK bit, until the stop condition is achieved. 
+
+(image placeholder)
+
+This diagram illustrates the entire process of I2C protocol, from the start to the stop condition. In the case of the planter, the pyportal addresses the sensor and requests data from it. 
+
+The sensor itself detects temperature in degrees celsius, and humidity from the value 200 (very dry) to 2000 (very wet). The pyportal processes the data taken and displays it on the graphic user interface. It contains a USB-C port for power and a microSD card slot for memory.
+
+As of this milestone, the planter has been assembled, but it has yet to be connected to the internet. There were many times where the 3D printed parts had trouble fitting together due to the lack of precision in their construction. Additionally, the body of the planter had two holes which were meant for the USB charger and the microSD card. These holes were too small and needed to be enlarged via sanding down the sides with a dremel. 
+
+In the next milestone, the pyportal will be connected to the internet and will be able to visualize data regarding the planter's internal humidity and temperature. This part of the process will involve coding with Circuitpython, a derivitive of python specialized for microcontrollers. 
 
 <!---# Schematics--->
 <!---Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser.--->
