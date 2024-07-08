@@ -76,9 +76,12 @@ My first milestone was assembling the body of my IoT (Internet of Things) plante
 
 The planter consists of a shell, which makes up its form, and a planter in the middle for the plant itself. On the outside, there is a graphic user interface that displays data and graphics. This screen is called the Adafruit PyPortal Titano, which also contains all of the main processing components in the planter. On the inside of the planter is the STEMMA soil sensor, attached to the side with screws. All of the parts for the planter, excluding the screws, nuts, and electrical components, were 3D printed.
 
-![Image of original unassembled parts](3dparts.png)
-![Photo of final assembled product](finishedplanter.png)
-<br>Reference: [https://learn.adafruit.com/pyportal-pet-planter-with-adafruit-io/3d-printing](url) <br>The unassembled parts and the assembled result. The body of the planter is orange because it was warped in printing and had to be replaced. 
+<!---![Image of original unassembled parts](3dparts.png)-->
+<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/3dparts.png" alt="Image of original unassembled parts" style="width:50%; height:auto;">
+<!--![Photo of final assembled product](finishedplanter.png)-->
+<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/finishedplanter.png" alt="Photo of final assembled product" style="width:50%; height:auto;">
+<br>**Figure 1a, 1b:** The unassembled parts and the assembled result. The body of the planter is orange because it was warped in printing and had to be replaced. 
+<br>Reference: [https://learn.adafruit.com/pyportal-pet-planter-with-adafruit-io/3d-printing](url) 
 
 The two main components, the PyPortal and the multimodal (multiple modes) sensor, communicate with I2C protocol. I2C stands for inter-integrated circuit, the method by which PyPortal and the sensor communicate with each other through two wires.  An integrated circuit (IC) includes many small components like resistors and transistors, compressed into a small area in the form of a chip. In I2C communication, there is a master-slave dynamic where one device acts as the microcontroller with multiple peripherals. In this case, the PyPortal acts as the master and the sensor acts as the slave. There are two wires involved in I2C protocol; SDA (serial data) and SCL (serial clock). Data is sent and received with the SDA, while the SCL carries the clock signal. The clock is essential to the data transmission process; since data is sent one bit at a time, it is imperative that the bits are sent in time.
 
