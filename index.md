@@ -6,7 +6,7 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 | Teresa W | Palo Alto High School | Electrical Engineering | Incoming Junior
 
 <!--![headshot](Teresa_W.jpg)-->
-<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/Teresa_W.jpg" alt="headshot" style="width:1512px; height:2016px;">
+<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/Teresa_W.jpg" alt="headshot" style="width:50%; height:auto;">
 
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
@@ -40,9 +40,12 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 
 For my second milestone, I first connected the moisture detection sensor to the main processing component,then connected the processing component to the computer, and finally displayed the moisture level inside the planter on the screen. Now, when water makes contact with the sensor, the screen will be filled with water. There is also a minimum and maximum moisture level; if those limits are surpassed, an audio warning will be played. 
 
-![Screen when there is no moisture](emptyscreen.png)
-![Screen when there is partial moisture](screen.png)
-![Screen when there is full moisture](fullscreen.png)
+<!---![Screen when there is no moisture](emptyscreen.png)-->
+<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/emptyscreen.png" alt="Screen when there is no moisture" style="width:50%; height:auto;">
+<!--![Screen when there is partial moisture](screen.png)-->
+<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/screen.png" alt="Screen when there is partial moisture" style="width:50%; height:auto;">
+<!---![Screen when there is full moisture](fullscreen.png)-->
+<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/fullscreen.png" alt="Screen when there is full moisture" style="width:50%; height:auto;">
 <br>The photos above show the screen when there is no moisture, partial moisture, and full moisture in succession. As the moisture level detected by the sensor increases, the screen is filled with water to show the user how much water to pour. On the bottom left, the temperature is shown in Celsius and on the bottom right, the moisture value is shown.
 
 The soil sensor measures from a spectrum of 350 to 500 units of moisture. The sensor is capacitive, meaning it does not make contact with any substance directly; rather, it emits an electrical field and anything that disrupts that field registers as a separate substance. The PyPortal is, in turn, powered by the computer by a USB C cable. As stated from the previous milestone, the PyPortal and sensor communicate through I2C protocol. 
