@@ -43,7 +43,7 @@ For my second milestone, I first connected the moisture detection sensor to the 
 <!---![Screen when there is no moisture](emptyscreen.png)-->
 <img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/emptyscreen.png" alt="Screen when there is no moisture" width="500">
 <!--![Screen when there is partial moisture](screen.png)-->
-<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/screen.png" alt="Screen when there is partial moisture" style="width:50%; height:auto;">
+<img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/screen.png" alt="Screen when there is partial moisture" width="500">
 <!---![Screen when there is full moisture](fullscreen.png)-->
 <img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/fullscreen.png" alt="Screen when there is full moisture" style="width:50%; height:auto;">
 <br>**Figure 1a, 1b, 1c:** The photos above show the screen when there is no moisture, partial moisture, and full moisture in succession. As the moisture level detected by the sensor increases, the screen is filled with water to show the user how much water to pour. On the bottom left, the temperature is shown in Celsius and on the bottom right, the moisture value is shown.
