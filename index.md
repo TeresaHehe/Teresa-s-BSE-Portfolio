@@ -41,7 +41,7 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 For my second milestone, I first connected the moisture detection sensor to the main processing component,then connected the processing component to the computer, and finally displayed the moisture level inside the planter on the screen. Now, when water makes contact with the sensor, the screen will be filled with water. There is also a minimum and maximum moisture level; if those limits are surpassed, an audio warning will be played. 
 
 <!---![Screen when there is no moisture](emptyscreen.png)-->
-<img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/emptyscreen.png" alt="Screen when there is no moisture" width="500">
+<img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/emptyscreen.png" alt="Screen when there is no moisture" width="500">
 <!--![Screen when there is partial moisture](screen.png)-->
 <img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/screen.png" alt="Screen when there is partial moisture" style="width:50%; height:auto;">
 <!---![Screen when there is full moisture](fullscreen.png)-->
