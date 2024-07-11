@@ -77,9 +77,9 @@ My first milestone was assembling the body of my IoT (Internet of Things) plante
 The planter consists of a shell, which makes up its form, and a planter in the middle for the plant itself. On the outside, there is a graphic user interface that displays data and graphics. This screen is called the Adafruit PyPortal Titano, which also contains all of the main processing components in the planter. On the inside of the planter is the STEMMA soil sensor, attached to the side with screws. All of the parts for the planter, excluding the screws, nuts, and electrical components, were 3D printed.
 
 <!---![Image of original unassembled parts](3dparts.png)-->
-<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/3dparts.png" alt="Image of original unassembled parts" style="width:50%; height:auto;">
+<img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/3dparts.png" alt="Image of original unassembled parts" width="500">
 <!--![Photo of final assembled product](finishedplanter.png)-->
-<img src="https://github.com/TeresaHehe/Teresa-s-BSE-Portfolio/blob/gh-pages/finishedplanter.png" alt="Photo of final assembled product" style="width:50%; height:auto;">
+<img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/finishedplanter.png" alt="Photo of final assembled product" width="500">
 <br>**Figure 1a, 1b:** The unassembled parts and the assembled result. The body of the planter is orange because it was warped in printing and had to be replaced. 
 <br>Reference: [https://learn.adafruit.com/pyportal-pet-planter-with-adafruit-io/3d-printing](url) 
 
@@ -139,7 +139,7 @@ Don't forget to place the link of where to buy each component inside the quotati
   There are multiple games available on the arcade, including tetris, snake, race cars, space invaders, and a slot machine. The four blue buttons control the direction of objects on the LED display modules, which are made of many small lights. Together, the lights flash on and off to create patterns and images. The scoreboard, a seven segment display, works in a similar fashion; it can create any combination of digits by lighting up or turning off each segment. Here, a diagram of a seven segment display is shown below.
 
 ![seven segment display diagram](display.png)
-<br>Each segment is labelled with a letter from "a" to "g"; by turning on and off different segments, the display can show different digits.
+<br>**Figure 1:**Each segment is labelled with a letter from "a" to "g"; by turning on and off different segments, the display can show different digits.
   
   When booting up the device, the player can scroll through the different game options with the directional buttons. The green button is used to select a game or perform game-specific actions, such as rotating a shape or shooting objects. The yellow button pauses the game or exits from it. Every component of the console, aside from the case and the button caps, was soldered onto the PCB. The solder acts as an adhesive and allows the wire to conduct electricity to the rest of the board.
 
