@@ -31,7 +31,7 @@ For my final milestone, I connected the planter to Wi-Fi so that it can display 
 
 In order for the data to display on Adafruit IO, information must be transmitted with Wi-Fi. In order to achieve this, I added another section of code in CircuitPython to set up the connection.
 
-```Python
+```CircuitPython
 # SPDX-FileCopyrightText: 2019 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
@@ -59,6 +59,31 @@ if secrets == {"ssid": None, "password": None}:
 
 print("ESP32 SPI webclient test")
 ```
+The “secrets” dictionary gets the SSID (name) of the Wi-Fi network and its password from settings.toml, another file in the CIRCUITPY drive. If there is nothing there, the code will attempt to import from secrets.py; if that still does not work, a message will be printed to the pyportal reminding the user to add the Wi-Fi information. 
+
+```CircuitPython
+# If you are using a board with pre-defined ESP32 Pins:
+esp32_cs = DigitalInOut(board.ESP_CS)
+esp32_ready = DigitalInOut(board.ESP_BUSY)
+esp32_reset = DigitalInOut(board.ESP_RESET)
+```
+The code above sets up the pins necessary for SPI (Serial Peripheral Interface) communication protocol. SPI communication is similar to I2C protocol in many ways. It relies on a master-slave architecture; in this case, the PyPortal acts as the master and the ESP32, which provides Wi-Fi connection, acts as the slave. Since the data transmits on one wire, the SCK (serial clock) is needed to synchronize the transfer of bits. Unlike I2C, there are two cables for communication; one from the master to the slave, and one from the slave to the master. There are also no addresses or start/stop conditions. The three lines in the image above initialize objects for digital input and output, with different pins for different aspects of SPI protocol. “board.ESP_CS” represents the pin for CS (chip select), which selects the slave in SPI protocol. “ESP_BUSY” checks if the ESP32 module is ready to accept new commands, and “ESP_RESET” resets it.
+
+```CircuitPython
+for ap in esp.scan_networks():
+    print("\t%-23s RSSI: %d" % (ap["ssid"], ap["rssi"]))
+
+print("Connecting to AP...")
+while not esp.is_connected:
+    try:
+        esp.connect_AP(secrets["ssid"], secrets["password"])
+    except OSError as e:
+        print("could not connect to AP, retrying: ", e)
+        continue
+```
+
+The for loop above searches for nearby Wi-Fi networks and prints their SSID (name) and RSSI (signal strength). Inside the while loop, the ESP32 module continuously attempts to connect to Wi-Fi with the SSID and password stored inside the “secrets” dictionary. If the connection is not established, it will continue to try until the Wi-Fi is connected. 
+
 
 # Second Milestone
 
