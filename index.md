@@ -24,7 +24,42 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE--->
 
+For my final milestone, I connected the planter to Wi-Fi so that it can display temperature and moisture data on the computer’s data interface. After a few minutes, the moisture and temperature values display on gauges and a line graph.
 
+![Adafruit IO data interface](adafruitio.png)
+
+<br>**Figure 1:** The Adafruit IO dashboard. Temperature and moisture are shown as gauges and as data points on their respective line graphs.
+
+In order for the data to display on Adafruit IO, information must be transmitted with Wi-Fi. In order to achieve this, I added another section of code in CircuitPython to set up the connection.
+
+```CircuitPython
+# SPDX-FileCopyrightText: 2019 ladyada for Adafruit Industries
+# SPDX-License-Identifier: MIT
+
+from os import getenv
+import board
+import busio
+from digitalio import DigitalInOut
+import adafruit_connection_manager
+import adafruit_requests
+from adafruit_esp32spi import adafruit_esp32spi
+
+# Get wifi details and more from a settings.toml file
+# tokens used by this Demo: CIRCUITPY_WIFI_SSID, CIRCUITPY_WIFI_PASSWORD
+secrets = {
+    "ssid": getenv("CIRCUITPY_WIFI_SSID"),
+    "password": getenv("CIRCUITPY_WIFI_PASSWORD"),
+}
+if secrets == {"ssid": None, "password": None}:
+    try:
+        # Fallback on secrets.py until depreciation is over and option is removed
+        from secrets import secrets
+    except ImportError:
+        print("WiFi secrets are kept in settings.toml, please add them there!")
+        raise
+
+print("ESP32 SPI webclient test")
+```
 
 # Second Milestone
 
@@ -105,7 +140,7 @@ In the next milestone, the PyPortal will be connected to the internet and will b
 <!---Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser.--->
 
 <!---# Code--->
-<!---Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
 void setup() {
@@ -118,7 +153,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
-```--->
+```
 
 <!---# Bill of Materials--->
 <!---Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
