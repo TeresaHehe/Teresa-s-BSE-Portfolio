@@ -27,12 +27,11 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 For my final milestone, I connected the planter to Wi-Fi so that it can display temperature and moisture data on the computer’s data interface. After a few minutes, the moisture and temperature values display on gauges and a line graph.
 
 ![Adafruit IO data interface](adafruitio.png)
-
 <br>**Figure 1:** The Adafruit IO dashboard. Temperature and moisture are shown as gauges and as data points on their respective line graphs.
 
 In order for the data to display on Adafruit IO, information must be transmitted with Wi-Fi. In order to achieve this, I added another section of code in CircuitPython to set up the connection.
 
-```CircuitPython
+```Python
 # SPDX-FileCopyrightText: 2019 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 
