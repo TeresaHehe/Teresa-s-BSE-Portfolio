@@ -209,15 +209,25 @@ void loop() {
 }
 ```-->
 
-<!---# Bill of Materials--->
-<!---Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
+# Bill of Materials
+Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
 
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |--->
+| 3D printed parts (3D filament) | Body of the planter, body of the tank, body of the servo. Tank was self made | N/A | <a href="https://learn.adafruit.com/pyportal-pet-planter-with-adafruit-io/3d-printing"> Link </a> |
+| M3 hardware (screws) | Attaches Pyportal to front of planter| N/A | N/A |
+| Adafruit PyPortal Titano | Main processor, screen of planter | $59.95 | <a href="https://www.adafruit.com/product/4444"> Link </a> |
+| Adafruit STEMMA Soil Sensor - I2C Capacitive Moisture Sensor - JST PH 2mm | Detects ambient moisture and temperature | $7.50 | <a href="https://www.adafruit.com/product/4026"> Link </a> |
+| Black Nylon Machine Screw and Stand-off Set – M2.5 Thread | Screws and nuts used to attach sensor to the planter | $16.95 | <a href="https://www.adafruit.com/product/3299"> Link </a> |
+| STEMMA Cable - 4 Pin JST-PH 2mm Cable–Female/Female - 150mm/6" Long | Connects PyPortal to the sensor | $0.75 | <a href="https://www.adafruit.com/product/3568"> Link </a> |
+| Mini Oval Speaker - 8 Ohm 1 Watt | Amplifies audio | $1.95 | <a href="https://www.adafruit.com/product/3923"> Link </a> |
+| USB Type A to Type C Cable - approx 1 meter / 3 ft long
+ | Provides power to the PyPortal | $4.95 | <a href="https://www.adafruit.com/product/4474"> Link </a> |
+| 5V 1A (1000mA) USB port power supply - UL Listed | Connect the wire to a power port | $5.95 | <a href="https://www.adafruit.com/product/501"> Link </a> |
+| Generic micro servo | Connect the wire to a power port | $2.10 | <a href="https://www.smraza.com/products/smraza-10-pcs-sg90-9g-micro-servo-motor-kit-for-rc-robot-arm-helicopter-airplane-car-boat-control-arduino-project-s51"> Link </a> |
+| 3 pin JST connector | Connect the servo to the PyPortal | N/A | N/A |
+| 1/4 inch pipe | Carry water from tank to planter | $8.85 | <a href="https://www.amazon.com/Flexible-Lightweight-Non-Toxic-Multipurpose-Reinforced/dp/B0B13Z7M55/ref=asc_df_B0B13Z7M55/?tag=hyprod-20&linkCode=df0&hvadid=692875362841&hvpos=&hvnetw=g&hvrand=71831162362843556&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-2281435179058&mcid=6c434c6faf423f7eb1bc860de828417b&hvocijid=71831162362843556-B0B13Z7M55-&hvexpln=73&gad_source=1&th=1"> Link </a> |
 
 # Starter Project: Retro Arcade Console
 
