@@ -11,7 +11,10 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
 
 ![Headstone Image](logo.svg)--->
-  
+# Modification
+My modification consists of adding an automatic water tank to the planter. When the moisture reaches critical levels, the tank will dispense water into the pot.
+
+
 # Final Milestone
 
 <!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**-->
