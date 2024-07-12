@@ -109,7 +109,6 @@ print("Done!")
 TEXT_URL and JSON_URL test the Wi-Fi connection in two ways. The text url tests the transfer of text, while the json url tests the transfer of data. The request in the code above is an HTTP (HyperText Transfer Protocol) request; the client sends an HTTP request to the server and the server sends back a response after processing.
 
 # Conclusion
-
 At Bluestamp Engineering, I faced many challenges. Of those challenges, there were three that were the most difficult to overcome. The first was construction issues; there were often times where the 3D printed assets did not come together properly. For example, the holes for the USB-C cable and SD card had to be enlarged with a dremel. The second was the PyPortal; it had problems running because the files in the library were not up to date, and I needed to be creative and source files from elsewhere to start it up. And finally, the code was completely foreign to me and required ample research to understand. What helped the most was reading the documentation to figure out how the code worked and debug errors.
 
 Yet there were also many triumphs. After each milestone, I had a functioning product that either looked coherent or could display data of some sort. One of my greatest triumphs was when I successfully displayed data onto the PyPortal; it required not only setting up the planter itself, but also debugging faulty code and spending time understanding it. 
