@@ -84,6 +84,37 @@ while not esp.is_connected:
 
 The for loop above searches for nearby Wi-Fi networks and prints their SSID (name) and RSSI (signal strength). Inside the while loop, the ESP32 module continuously attempts to connect to Wi-Fi with the SSID and password stored inside the “secrets” dictionary. If the connection is not established, it will continue to try until the Wi-Fi is connected. 
 
+```CircuitPython
+TEXT_URL = "http://wifitest.adafruit.com/testwifi/index.html"
+JSON_URL = "http://api.coindesk.com/v1/bpi/currentprice/USD.json"
+
+# esp._debug = True
+print("Fetching text from", TEXT_URL)
+r = requests.get(TEXT_URL)
+print("-" * 40)
+print(r.text)
+print("-" * 40)
+r.close()
+
+print()
+print("Fetching json from", JSON_URL)
+r = requests.get(JSON_URL)
+print("-" * 40)
+print(r.json())
+print("-" * 40)
+r.close()
+
+print("Done!")
+```
+TEXT_URL and JSON_URL test the Wi-Fi connection in two ways. The text url tests the transfer of text, while the json url tests the transfer of data. The request in the code above is an HTTP (HyperText Transfer Protocol) request; the client sends an HTTP request to the server and the server sends back a response after processing.
+
+# Conclusion
+
+At Bluestamp Engineering, I faced many challenges. Of those challenges, there were three that were the most difficult to overcome. The first was construction issues; there were often times where the 3D printed assets did not come together properly. For example, the holes for the USB-C cable and SD card had to be enlarged with a dremel. The second was the PyPortal; it had problems running because the files in the library were not up to date, and I needed to be creative and source files from elsewhere to start it up. And finally, the code was completely foreign to me and required ample research to understand. What helped the most was reading the documentation to figure out how the code worked and debug errors.
+
+Yet there were also many triumphs. After each milestone, I had a functioning product that either looked coherent or could display data of some sort. One of my greatest triumphs was when I successfully displayed data onto the PyPortal; it required not only setting up the planter itself, but also debugging faulty code and spending time understanding it. 
+
+I learned many key concepts while building my project. For example, I learned how devices communicate between each other with serial communication protocols such as I2C or SPI. I also learned how capacitive sensors detect levels of moisture. While working on my modification, attaching an automatic water tank, I learned how to create 3D models on autodesk fusion360. In the future, I hope to dive deeper into product design and create more functional products.
 
 # Second Milestone
 
@@ -164,9 +195,9 @@ In the next milestone, the PyPortal will be connected to the internet and will b
 <!---Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser.--->
 
 <!---# Code--->
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+<!--Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs.-->
 
-```c++
+<!--```c++
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -177,7 +208,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
 }
-```
+```-->
 
 <!---# Bill of Materials--->
 <!---Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
