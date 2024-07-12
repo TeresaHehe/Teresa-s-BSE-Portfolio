@@ -222,8 +222,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 | Black Nylon Machine Screw and Stand-off Set – M2.5 Thread | Screws and nuts used to attach sensor to the planter | $16.95 | <a href="https://www.adafruit.com/product/3299"> Link </a> |
 | STEMMA Cable - 4 Pin JST-PH 2mm Cable–Female/Female - 150mm/6" Long | Connects PyPortal to the sensor | $0.75 | <a href="https://www.adafruit.com/product/3568"> Link </a> |
 | Mini Oval Speaker - 8 Ohm 1 Watt | Amplifies audio | $1.95 | <a href="https://www.adafruit.com/product/3923"> Link </a> |
-| USB Type A to Type C Cable - approx 1 meter / 3 ft long
- | Provides power to the PyPortal | $4.95 | <a href="https://www.adafruit.com/product/4474"> Link </a> |
+| USB Type A to Type C Cable - approx 1 meter / 3 ft long | Provides power to the PyPortal | $4.95 | <a href="https://www.adafruit.com/product/4474"> Link </a> |
 | 5V 1A (1000mA) USB port power supply - UL Listed | Connect the wire to a power port | $5.95 | <a href="https://www.adafruit.com/product/501"> Link </a> |
 | Generic micro servo | Connect the wire to a power port | $2.10 | <a href="https://www.smraza.com/products/smraza-10-pcs-sg90-9g-micro-servo-motor-kit-for-rc-robot-arm-helicopter-airplane-car-boat-control-arduino-project-s51"> Link </a> |
 | 3 pin JST connector | Connect the servo to the PyPortal | N/A | N/A |
