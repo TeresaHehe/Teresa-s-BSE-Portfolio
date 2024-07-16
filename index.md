@@ -25,7 +25,7 @@ As seen in the images above, the bottom half contains a shelf 24 mm tall, which 
 
 ![Inside of servo shell](servo.png)
 <br>**Figure 3:** Internal diagram of the servo’s 3D shell. The wheel in the middle is not centered and spins with an asymmetrical trajectory.
-Reference: [https://www.printables.com/en/model/207051-servo-valve](url)
+<br>Reference: [https://www.printables.com/en/model/207051-servo-valve](url)
 
 In order to control the flow of water, the pipe is pinched shut by the servo until water is needed. The servo is attached to a 3D printed mechanism; when it moves, the wheel in the middle lifts aside one of the levers (orange). When a pipe is fitted through the holes in the side, the lever pinches it shut, preventing water from going through. 
 
