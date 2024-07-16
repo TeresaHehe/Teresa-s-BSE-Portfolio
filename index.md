@@ -14,6 +14,53 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 # Modification
 My modification consists of adding an automatic water tank to the planter. When the moisture reaches critical levels, the tank will dispense water into the pot.
 
+![Planter with water tank](watertankplanter.png)
+<br>**Figure 1:** The finished planter, complete with a lidded water tank. Only the top half contains water, while the other is a false bottom with empty space that houses the servo (motor system). The tank, the false bottom, and the lid are custom made 3D components, made in autodesk fusion360.
+
+![Overview of water tank in fusion360](fullview.png)
+![Cross section of water tank in fusion360](crosssection.png)
+<br>**Figure 2a, 2b:** the 3D model of the water tank in fusion360. In the second image, it is cut open to reveal the cross section.
+
+As seen in the images above, the bottom half contains a shelf 24 mm tall, which conceals the shell of the servo. There is also a ¼” hole in the water tank for the pipe to fit through. 
+
+![Inside of servo shell](servo.png)
+<br>**Figure 3:** Internal diagram of the servo’s 3D shell. The wheel in the middle is not centered and spins with an asymmetrical trajectory.
+Reference: [https://www.printables.com/en/model/207051-servo-valve](url)
+
+In order to control the flow of water, the pipe is pinched shut by the servo until water is needed. The servo is attached to a 3D printed mechanism; when it moves, the wheel in the middle lifts aside one of the levers (orange). When a pipe is fitted through the holes in the side, the lever pinches it shut, preventing water from going through. 
+
+To ensure the pipe will open and shut as needed, the servo is coded to open and close at certain times.
+
+```CircuitPython
+# library imports for servo
+import time
+import board
+import pwmio
+from adafruit_motor import servo
+
+# create a PWMOut object on Pin D4.
+pwm = pwmio.PWMOut(board.D4, duty_cycle=2 ** 15, frequency=50)
+
+# Create a servo object, my_servo.
+my_servo = servo.Servo(pwm)
+
+my_servo.angle = 0
+```
+At the beginning of the code, the necessary libraries are imported and a PWMOut object is created. PWM, or Pulse Width Modulation, is responsible for making the servo run and alters how long the voltage is on compared to how long it isn’t on. Because the servo’s wires are connected to pin D4 of the PyPortal, the object is initialized with board.D4. The angle of the servo is set to 0 degrees, which closes the pipe and keeps the water from entering the planter.
+
+```CircuitPython
+if moisture <= SOIL_LEVEL_MIN: # also rotates servo to open when moisture below minimum
+    print("Playing low water level warning...")
+    pyportal.play_file(wav_water_low)
+    for angle in range(0, 90, 5):  # 0 - 90 degrees, 5 degrees at a time.
+        my_servo.angle = angle
+    time.sleep(6)
+```
+When the moisture level falls below the minimum moisture level, the servo rotates 90 degrees and opens the pipe. It stays there for 6 seconds in order to allow ample water flow, then returns to 0 degrees, closing the pipe.
+
+One of the challenges I faced while installing this modification was preventing the water tank from leaking. While the hole was perfectly sized for the pipe to fit through, it was not tight enough for water to stay inside the tank. I mitigated this by supergluing the outside edges of the pipe to the tank’s bottom wall. I also made the error of not closing the pipe at the beginning of the code, causing the pipe to continuously dispense water while the PyPortal loaded. Once that code was moved to the top, the issue disappeared.
+
+The planter is now completely finished. Once the plant is added, it will be ready for demonstration.
 
 # Final Milestone
 
@@ -140,7 +187,7 @@ For my second milestone, I first connected the moisture detection sensor to the 
 <img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/fullscreen.png" alt="Screen when there is full moisture" width="500">
 <br>**Figure 1a, 1b, 1c:** The photos above show the screen when there is no moisture, partial moisture, and full moisture in succession. As the moisture level detected by the sensor increases, the screen is filled with water to show the user how much water to pour. On the bottom left, the temperature is shown in Celsius and on the bottom right, the moisture value is shown.
 
-The soil sensor measures from a spectrum of 350 to 500 units of moisture. The sensor is capacitive, meaning it does not make contact with any substance directly; rather, it emits an electrical field and anything that disrupts that field registers as a separate substance. The PyPortal is, in turn, powered by the computer by a USB C cable. As stated from the previous milestone, the PyPortal and sensor communicate through I2C protocol. 
+The soil sensor measures from a spectrum of 650 to 800 units of moisture. The sensor is capacitive, meaning it does not make contact with any substance directly; rather, it emits an electrical field and anything that disrupts that field registers as a separate substance. The PyPortal is, in turn, powered by the computer by a USB C cable. As stated from the previous milestone, the PyPortal and sensor communicate through I2C protocol. 
 
 ![Diagram of capacitive sensor](sensor.png)
 <br>**Figure 2:** This diagram illustrates how a capacitive sensor works. A dielectric medium (material that does not conduct electricity) is surrounded by two conductive plates. When water comes into contact with the sensor, the capacitance, or ability to store charge, of the medium increases. The change in capacitance allows the sensor to detect levels of moisture.
