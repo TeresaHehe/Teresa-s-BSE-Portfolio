@@ -19,22 +19,22 @@ My modification consists of adding an automatic water tank to the planter. When 
 ![Planter with water tank](watertankplanter.png)
 <br>**Figure 1:** The finished planter, complete with a lidded water tank. Only the top half contains water, while the other is a false bottom with empty space that houses the servo (motor system). The tank, the false bottom, and the lid are custom made 3D components, made in autodesk fusion360.
 
+![Servo flowchart](flowchart.png)
+<br>**Figure 2:** The flowchart above visualizes how the servo is programmed. When the moisture level falls below the threshold of 650, the servo opens the pipe.
+
 ![Overview of water tank in fusion360](fullview.png)
 ![Cross section of water tank in fusion360](crosssection.png)
-<br>**Figure 2a, 2b:** the 3D model of the water tank in fusion360. In the second image, it is cut open to reveal the cross section.
+<br>**Figure 3a, 3b:** the 3D model of the water tank in fusion360. In the second image, it is cut open to reveal the cross section.
 
 As seen in the images above, the bottom half contains a shelf 24 mm tall, which conceals the shell of the servo. There is also a ¼” hole in the water tank for the pipe to fit through. 
 
 ![Inside of servo shell](servo.png)
-<br>**Figure 3:** Internal diagram of the servo’s 3D shell. The wheel in the middle is not centered and spins with an asymmetrical trajectory.
+<br>**Figure 4:** Internal diagram of the servo’s 3D shell. The wheel in the middle is not centered and spins with an asymmetrical trajectory.
 <br>Reference: [https://www.printables.com/en/model/207051-servo-valve](url)
 
 In order to control the flow of water, the pipe is pinched shut by the servo until water is needed. The servo is attached to a 3D printed mechanism; when it moves, the wheel in the middle lifts aside one of the levers (orange). When a pipe is fitted through the holes in the side, the lever pinches it shut, preventing water from going through. 
 
 To ensure the pipe will open and shut as needed, the servo is coded to open and close at certain times.
-
-![Servo flowchart](flowchart.png)
-<br>**Figure 4:** The flowchart above visualizes how the servo is programmed. When the moisture level falls below the threshold of 650, the servo opens the pipe.
 
 ```CircuitPython
 # library imports for servo
