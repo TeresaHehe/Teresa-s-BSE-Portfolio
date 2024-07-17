@@ -16,7 +16,7 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 
 My modification consists of adding an automatic water tank to the planter. When the moisture reaches critical levels, the tank will dispense water into the pot.
 
-![Planter with water tank](watertankplanter.png)
+![Planter with water tank](watertankplanterwithplant.png)
 <br>**Figure 1:** The finished planter, complete with a lidded water tank. Only the top half contains water, while the other is a false bottom with empty space that houses the servo (motor system). The tank, the false bottom, and the lid are custom made 3D components, made in autodesk fusion360.
 
 ![Servo flowchart](flowchart.png)
