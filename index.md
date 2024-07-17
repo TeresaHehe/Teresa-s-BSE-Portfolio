@@ -56,7 +56,7 @@ if moisture <= SOIL_LEVEL_MIN: # also rotates servo to open when moisture below 
         my_servo.angle = angle
     time.sleep(6)
 ```
-When the moisture level falls below the minimum moisture level, the servo rotates 90 degrees and opens the pipe. It stays there for 6 seconds in order to allow ample water flow, then returns to 0 degrees, closing the pipe.
+When the moisture level falls below the minimum moisture level, the servo rotates 90 degrees and opens the pipe. It stays there for 4 seconds in order to allow ample water flow, then returns to 0 degrees, closing the pipe.
 
 One of the challenges I faced while installing this modification was preventing the water tank from leaking. While the hole was perfectly sized for the pipe to fit through, it was not tight enough for water to stay inside the tank. I mitigated this by supergluing the outside edges of the pipe to the tank’s bottom wall. I also made the error of not closing the pipe at the beginning of the code, causing the pipe to continuously dispense water while the PyPortal loaded. Once that code was moved to the top, the issue disappeared.
 
