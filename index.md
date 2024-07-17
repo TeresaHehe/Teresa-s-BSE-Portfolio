@@ -33,6 +33,9 @@ In order to control the flow of water, the pipe is pinched shut by the servo unt
 
 To ensure the pipe will open and shut as needed, the servo is coded to open and close at certain times.
 
+![Servo flowchart](flowchart.png)
+<br>**Figure 4:** The flowchart above visualizes how the servo is programmed. When the moisture level falls below the threshold of 650, the servo opens the pipe.
+
 ```CircuitPython
 # library imports for servo
 import time
@@ -79,7 +82,7 @@ The planter is now completely finished. Once the plant is added, it will be read
 For my final milestone, I connected the planter to Wi-Fi so that it can display temperature and moisture data on the computer’s data interface. After a few minutes, the moisture and temperature values display on gauges and a line graph.
 
 ![Adafruit IO data interface](adafruitio.png)
-<br>**Figure 4:** The Adafruit IO dashboard. Temperature and moisture are shown as gauges and as data points on their respective line graphs.
+<br>**Figure 5:** The Adafruit IO dashboard. Temperature and moisture are shown as gauges and as data points on their respective line graphs.
 
 In order for the data to display on Adafruit IO, information must be transmitted with Wi-Fi. In order to achieve this, I added another section of code in CircuitPython to set up the connection.
 
@@ -187,12 +190,12 @@ For my second milestone, I first connected the moisture detection sensor to the 
 <img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/screen.png" alt="Screen when there is partial moisture" width="500">
 <!---![Screen when there is full moisture](fullscreen.png)-->
 <img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/fullscreen.png" alt="Screen when there is full moisture" width="500">
-<br>**Figure 5a, 5b, 5c:** The photos above show the screen when there is no moisture, partial moisture, and full moisture in succession. As the moisture level detected by the sensor increases, the screen is filled with water to show the user how much water to pour. On the bottom left, the temperature is shown in Celsius and on the bottom right, the moisture value is shown.
+<br>**Figure 6a, 6b, 6c:** The photos above show the screen when there is no moisture, partial moisture, and full moisture in succession. As the moisture level detected by the sensor increases, the screen is filled with water to show the user how much water to pour. On the bottom left, the temperature is shown in Celsius and on the bottom right, the moisture value is shown.
 
 The soil sensor measures from a spectrum of 650 to 800 units of moisture. The sensor is capacitive, meaning it does not make contact with any substance directly; rather, it emits an electrical field and anything that disrupts that field registers as a separate substance. The PyPortal is, in turn, powered by the computer by a USB C cable. As stated from the previous milestone, the PyPortal and sensor communicate through I2C protocol. 
 
 ![Diagram of capacitive sensor](sensor.png)
-<br>**Figure 6:** This diagram illustrates how a capacitive sensor works. A dielectric medium (material that does not conduct electricity) is surrounded by two conductive plates. When water comes into contact with the sensor, the capacitance, or ability to store charge, of the medium increases. The change in capacitance allows the sensor to detect levels of moisture.
+<br>**Figure 7:** This diagram illustrates how a capacitive sensor works. A dielectric medium (material that does not conduct electricity) is surrounded by two conductive plates. When water comes into contact with the sensor, the capacitance, or ability to store charge, of the medium increases. The change in capacitance allows the sensor to detect levels of moisture.
 <br>Reference: [https://www.realpars.com/blog/capacitive-sensor#:~:text=A%20capacitive%20sensor%20is%20an,detected%20by%20a%20capacitive%20sensor.](url)
 
 The PyPortal runs on CircuitPython, an offshoot of Python. It contains the CIRCUITPY drive, which possesses the “lib” folder. The lib folder contains a library of all essential files for different components of the planter, including software and assets for the sounds, images, and other files. These assets are imported onto code.py, where the main commands are executed. Most of the functions on code.py are for setting up the graphics and I2C communications. When water makes contact with the sensor, the screen fills with blue to represent water being poured into the planter, and the moisture level increases. The function fill_water is responsible for this animation; it takes fill_percent as input, the percentage of the display which is filled with blue pixels. When fill_val, the fill value, exceeds fill_percent, the blue pixels recede and cause the water to go down. The opposite is also true; when fill_val is less than fill_percent, the blue pixels go up on the screen. The function display_temperature allows the user to switch between displaying Celsius or Fahrenheit. If is_celsius is set to True, the screen will display the temperature in Celsius, and vice versa if is_celsius is set to False. 
@@ -221,19 +224,19 @@ The planter consists of a shell, which makes up its form, and a planter in the m
 <img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/3dparts.png" alt="Image of original unassembled parts" width="500">
 <!--![Photo of final assembled product](finishedplanter.png)-->
 <img src="https://raw.githubusercontent.com/TeresaHehe/Teresa-s-BSE-Portfolio/gh-pages/finishedplanter.png" alt="Photo of final assembled product" width="500">
-<br>**Figure 7a, 7b:** The unassembled parts and the assembled result. The body of the planter is orange because it was warped in printing and had to be replaced. 
+<br>**Figure 8a, 8b:** The unassembled parts and the assembled result. The body of the planter is orange because it was warped in printing and had to be replaced. 
 <br>Reference: [https://learn.adafruit.com/pyportal-pet-planter-with-adafruit-io/3d-printing](url) 
 
 The two main components, the PyPortal and the multimodal (multiple modes) sensor, communicate with I2C protocol. I2C stands for inter-integrated circuit, the method by which PyPortal and the sensor communicate with each other through two wires.  An integrated circuit (IC) includes many small components like resistors and transistors, compressed into a small area in the form of a chip. In I2C communication, there is a controller-peripheral dynamic where one device acts as the microcontroller with multiple peripherals. In this case, the PyPortal acts as the controller and the sensor acts as the peripheral. There are two wires involved in I2C protocol; SDA (serial data) and SCL (serial clock). Data is sent and received with the SDA, while the SCL carries the clock signal. The clock is essential to the data transmission process; since data is sent one bit at a time, it is imperative that the bits are sent in time.
 
 ![diagram of I2C protocol showing the start/stop conditions](i2cdiagram.png)
-<br>**Figure 8:** As seen in this figure of the SDA and the SCL, there is a start and a stop condition required in the process. In the start condition, the SDA must go from high to low voltage before the SCL goes from high to low. For the stop condition, the SCL goes from low to high voltage before the SDA does.
+<br>**Figure 9:** As seen in this figure of the SDA and the SCL, there is a start and a stop condition required in the process. In the start condition, the SDA must go from high to low voltage before the SCL goes from high to low. For the stop condition, the SCL goes from low to high voltage before the SDA does.
 <br> Reference: https://www.researchgate.net/figure/I2C-protocol-data-transmission-timing-diagram_fig3_339803306 
 
 Each peripheral possesses a 7 bit address. After sending the start condition, the controller will send the address of the peripheral it wishes to communicate with, along with a read/write bit. This bit specifies whether data is being sent (low voltage) or received (high voltage). The peripheral sends back an ACK (acknowledge) bit if the message was successfully received, and a NACK (no-acknowledge) bit if it was not received. From then on, data frames are sent in 8 bit packages, followed by an ACK or NACK bit, until the stop condition is achieved. 
 
 ![abstracted diagram of entire I2C protocol](i2cmessage.png)
-<br>**Figure 9:** This diagram illustrates the entire process of I2C protocol, from the start to the stop condition. In the case of the planter, the PyPortal addresses the sensor and requests data from it.
+<br>**Figure 10:** This diagram illustrates the entire process of I2C protocol, from the start to the stop condition. In the case of the planter, the PyPortal addresses the sensor and requests data from it.
 <br>Reference: [https://www.circuitbasics.com/basics-of-the-i2c-communication-protocol/](url) 
 
 The sensor itself detects temperature in degrees celsius, and humidity from the value 200 (very dry) to 2000 (very wet). The PyPortal processes the data taken and displays it on the graphic user interface. It contains a USB-C port for power and a microSD card slot for memory.
@@ -289,7 +292,7 @@ Don't forget to place the link of where to buy each component inside the quotati
   There are multiple games available on the arcade, including tetris, snake, race cars, space invaders, and a slot machine. The four blue buttons control the direction of objects on the LED display modules, which are made of many small lights. Together, the lights flash on and off to create patterns and images. The scoreboard, a seven segment display, works in a similar fashion; it can create any combination of digits by lighting up or turning off each segment. Here, a diagram of a seven segment display is shown below.
 
 ![seven segment display diagram](display.png)
-<br>**Figure 10:** Each segment is labelled with a letter from "a" to "g"; by turning on and off different segments, the display can show different digits.
+<br>**Figure 11:** Each segment is labelled with a letter from "a" to "g"; by turning on and off different segments, the display can show different digits.
   
   When booting up the device, the player can scroll through the different game options with the directional buttons. The green button is used to select a game or perform game-specific actions, such as rotating a shape or shooting objects. The yellow button pauses the game or exits from it. Every component of the console, aside from the case and the button caps, was soldered onto the PCB. The solder acts as an adhesive and allows the wire to conduct electricity to the rest of the board.
 
