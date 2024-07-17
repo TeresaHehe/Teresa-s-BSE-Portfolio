@@ -12,6 +12,8 @@ The interactive pet planter uses sensors to detect water levels in a planter. Wh
 
 ![Headstone Image](logo.svg)--->
 # Modification
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zJNkHwfHmJA?si=cW3HDYOQMQpxac4l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 My modification consists of adding an automatic water tank to the planter. When the moisture reaches critical levels, the tank will dispense water into the pot.
 
 ![Planter with water tank](watertankplanter.png)
